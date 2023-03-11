@@ -1,3 +1,4 @@
+// Copyright (C) 2023 Ethan Uppal. All rights reserved.
 import Foundation
 
 class LevelOneChain {
@@ -88,7 +89,7 @@ let morrisCorpusPath = rootPath.appendingPathComponent("output/morris-both.txt")
 if var morrisCorpusText = try? String(contentsOf: morrisCorpusPath) {
     morrisCorpusText = morrisCorpusText.trimmingCharacters(in: .newlines)
     let morrisCorpusAttr = Attributes(text: morrisCorpusText)
-    let chain = LevelOneChain(words: morrisCorpusAttr.words, continueWord: 0.99)
+    let chain = LevelOneChain(words: morrisCorpusAttr.words, continueWord: 0.95)
 
     print("Type 'q' to exit.")
     var input: String?
@@ -96,7 +97,9 @@ if var morrisCorpusText = try? String(contentsOf: morrisCorpusPath) {
         print("Enter seed: ", terminator: "")
         input = readLine()
         if var input = input, input != "q" {
-            input = input.trimmingCharacters(in: .whitespacesAndNewlines)
+            input = input
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .lowercased()
             process(input: input, chain: chain)
         }
     } while input != "q"
