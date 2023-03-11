@@ -60,8 +60,8 @@ class LevelOneChain {
         var i = 0
         while i < max && Double.random(in: 0 ... 1) < continueWord {
             let next = chooseNext(word: current)
-            if current == "i" {
-                current = "I"
+            if current == "i" || i == 0 {
+                current = current.capitalized
             }
             array.append(current)
             current = next
