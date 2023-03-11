@@ -108,7 +108,7 @@ func compareAttributes(
         let p1 = Double(x1) / n1
         let p2 = Double(x2) / n2
         let interval = ZInterval(p1: p1, p2: p2, n1: n1, n2: n2, zStar: 1.96)
-        print("'\(specialPunc)': \(interval)  d=\(interval.cohenD)")
+        print("'\(specialPunc)': \(interval)\n\td=\(interval.cohenD)")
     }
 
     // Intervals for word frequency
@@ -133,7 +133,7 @@ func compareAttributes(
         let p2 = withSloperFreqs[word] ?? 0
         let interval = ZInterval(p1: p1, p2: p2, n1: n1, n2: n2, zStar: 1.96)
         if interval.isSignificant {
-            print("\"\(word)\": \(interval) d=\(interval.cohenD)")
+            print("\"\(word)\": \(interval)\n\td=\(interval.cohenD)")
         }
     }
 }
