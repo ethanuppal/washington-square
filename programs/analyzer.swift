@@ -9,7 +9,7 @@ class Attributes {
     }
 
     static private let splitCharacters = "\n`~1!2@3#4$5%6^7&8*9(0)-_=+[{]}\\|;:'\",<.>/?']` —"
-    static let specialPunctuations: [Character] = ["!", "?"]
+    static let specialPunctuations: [Character] = ["!", "?", "."]
 
     private let words: [String]
     private var specialPuncCounts = [Character:Int]()
